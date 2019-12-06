@@ -1,6 +1,10 @@
 MySQL = module("vrp_mysql", "MySQL")
 local Tunnel = module("vrp", "lib/Tunnel")
 local Proxy = module("vrp", "lib/Proxy")
+local Lang = module("vrp", "lib/Lang")
+local cfg = module("vrp", "cfg/base")
+local lang = Lang.new(module("vrp", "cfg/lang/"..cfg.lang) or {})
+
 
 vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP","vRP_dmpschool")
